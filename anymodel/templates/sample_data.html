@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div align='center'>
+    <h1>Marine retail insurance pricing dataset </h1>
+    <br>
+    <img align='center' src="{{ url_for('static', filename=  'boats.png') }}">
+    <br>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-light">  <a href="{{ url_for('users.sample_dataset_info')}}">General info</a></li>
+  <li class="list-group-item list-group-item-light"><a href="{{ url_for('users.sample_user_dataset')}}">Read the sample dataset</a></li>
+  <li class="list-group-item list-group-item-light"><a href="{{ url_for('users.sample_dataset_variables')}}">List of variables</a></li>
+</ul>
+
+<br>
+<br>
+<br>
+
+
+{% endblock content %}

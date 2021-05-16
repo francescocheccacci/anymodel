@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div align='center'>
+    <h2>Your profile</h2>
+    <br>
+    <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
+    <br>
+    <br>
+      <div align="left">
+        {{ current_user.username }} <a href="{{ url_for('users.UpdateUserUsernameView')}}">modify username</a>
+        <br>
+        {{ current_user.email }} <a href="{{ url_for('users.UpdateUserEmailView')}}">modify email</a>
+        <br>
+        <a href="{{ url_for('users.UpdateUserPictureView')}}">Add/Update your profile pic</a>
+      </div>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-light">  <a href="{{ url_for('users.UpdateUserDatasetView')}}">Add/Update your dataset</a></li>
+  <li class="list-group-item list-group-item-light"><a href="{{ url_for('users.user_dataset')}}">Read your dataset</a></li>
+  <li class="list-group-item list-group-item-light"><a href="{{ url_for('users.dataset_variables')}}">List of variables</a></li>
+  {% if current_user.is_staff%}
+  <li class="list-group-item list-group-item-light"><a href="{{ url_for('admin.index')}}">Admin (staff only)</a></li>
+  {% endif %}
+</ul>
+
+<br>
+<br>
+<br>
+
+{% endblock content %}

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+    h2 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: right;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 90%;
+    }
+    table tbody tr:hover {
+        background-color: #dddddd;
+    }
+    .wide {
+        width: 90%;
+    }
+
+</style>
+
+
+
+
+
+  <div class="jumbotron">
+    <div align='center'>
+      <h1 > {{variable}}</h1>
+    </div>
+  </div>
+  <br>
+  {% if "account" in request.path %}
+  <a href="{{url_for('users.dataset_variables')}}" class="btn btn-dark"> < Go back to the list of variables </a>
+  {% else %}
+  <a href="{{url_for('users.sample_dataset_variables')}}" class="btn btn-dark"> < Go back to the list of variables </a>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+
+  <table>
+    <tbody>
+      <tr>
+        <td style="background-color:#ffc0cb">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Observed</td>
+      </tr>
+      <tr>
+        <td style="background-color:#013220">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Fitted</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {{ the_div2|safe }}
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.2.min.js"></script>
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.2.min.js"></script>
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.2.min.js"></script>
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.3.2.min.js"></script>
+  {{ the_script2|safe }}
+  <br>
+  {{ the_div|safe }}
+  {{ the_script|safe }}
+
+  <br>
+  <br>
+  <br>
+  {{variable_summary | safe}}
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+{% endblock content %}

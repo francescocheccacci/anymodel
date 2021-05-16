@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1>AnyModel</h1>
+    <p>
+      A Python Flask application
+      for any type of Statistical
+      and Machine Learning model.
+    </p>
+    <div class="btn btn-dark">
+      <a href="{{url_for('users.register')}}" style='color:white'>Register!</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ url_for('static', filename=  'boats.png') }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Check out our sample dataset</h5>
+      <p class="card-text">Practice with a sample dataset provided by us!</p>
+      <a href="{{url_for('users.sample_data')}}" class="btn btn-dark">Start modeling!</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+{% endblock %}

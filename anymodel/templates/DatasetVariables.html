@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <div>
+    <h1 > List of variables</h1>
+    <p>
+      Click on a variable to explore it.
+    </p>
+  </div>
+</div>
+<div class="container">
+  {% if "account" in request.path %}
+  <a href="{{url_for('users.account')}}" class="btn btn-dark"> < Go back to your profile </a>
+  {% else %}
+  <a href="{{url_for('users.sample_data')}}" class="btn btn-dark"> < Go back to the dataset presentation </a>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+    <ol class="list-group">
+      {% for column in columns %}
+      {% if "account" in request.path %}
+      <li class="list-group-item list-group-item-light"> <a href="{{ url_for('users.summary_variable',variable=column)}}" >{{column}} </a> </li>
+      {% else %}
+      <li class="list-group-item list-group-item-light"> <a href="{{ url_for('users.sample_summary_variable',variable=column)}}" >{{column}} </a> </li>
+      {% endif %}
+      {% endfor %}
+    </ol>
+    <br>
+</div>
+
+
+
+{% endblock content %}

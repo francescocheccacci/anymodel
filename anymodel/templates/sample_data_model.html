@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style media="screen">
+  .rcode{
+    font-family: "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter";
+    text-align: center
+  }
+</style>
+
+
+<div class="jumbotron">
+  <div align='center'>
+    <h1>Sample dataset description</h1>
+  </div>
+</div>
+<a href="{{url_for('users.sample_dataset_info')}}" class="btn btn-dark"> < Go back to the dataset general information </a>
+<br>
+<br>
+<br>
+<p>
+  This fitted model is a poisson glm. It has been developed in R with the following structure:
+</p>
+
+<p class="rcode breadcrumb">
+    glm(sample_data$observed/sample_data$weight ~  sample_data$log_sum_insured + sample_data$insured_age.soc + sample_data$soc_pers + sample_data$type_of_boat, weights=sample_data$weight, family=quasipoisson(link=log))
+</p>
+<p>
+  Take a look at the distance between the <strong>observed</strong> and <strong>fitted</strong> curves of the <a href="{{url_for('users.sample_dataset_variables')}}"> other variables</a> and guess if any other variable could be added to the model.
+</p>
+<br>
+<br>
+
+{% endblock content %}

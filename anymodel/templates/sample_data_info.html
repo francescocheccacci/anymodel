@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div align='center'>
+    <h1>Sample dataset description</h1>
+  </div>
+</div>
+<a href="{{url_for('users.sample_data')}}" class="btn btn-dark"> < Go back to the dataset presentation </a>
+<br>
+<br>
+<br>
+<p>
+  This dataset is part of a process for pricing a marine retail insurance product.
+</p>
+<p>
+  Every row in the dataset represents a pool of insured parties with similar characteristics.
+</p>
+
+<p>
+  The dataset is composed of:
+<ul>
+  <li>A set of 17 columns which represents the characteristics of the pool of insured parties.</li>
+  <li>The response variable, which is named <strong>observed</strong>, and it represents the number of claims made by the pool of insured parties.</li>
+  <li>An exposure variable, which is named <strong>weight</strong>, and it represents the number of years that the pool of insured parties has been insured. For example a pool made of 2 insured parties, one that has been covered for 1 year and the other that has been covered for 6 months will have a weight equal to 1.5.</li>
+  <li>Finally we have a variable called <strong>fit</strong> and it represents the estimate made by our <a href="{{url_for('users.sample_dataset_model')}}">model</a>.</li>
+</ul>
+</p>
+<p>
+  If you take a look at the characteristics of the pools of the insured parties you will actually see <a href="{{url_for('users.sample_dataset_variables')}}">18 columns</a> instead of 17. However column number 18 is not really a characteristic of the pool of insured parties, it is just a 'trick' to have a <u>total</u> of the <strong>weight</strong>, <strong>response</strong> and <strong>fit</strong> columns of our database.
+</p>
+
+
+
+
+
+
+<br>
+<br>
+
+{% endblock content %}

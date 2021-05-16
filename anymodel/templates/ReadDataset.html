@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+    h2 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: right;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 90%;
+    }
+    table tbody tr:hover {
+        background-color: #dddddd;
+    }
+    .wide {
+        width: 90%;
+    }
+
+</style>
+<div class="jumbotron">
+  <div>
+    {% if "account" in request.path %}
+    <h1>Your dataset</h1>
+    {% else %}
+    <h1>Sample dataset</h1>
+    {% endif %}
+  </div>
+</div>
+<br>
+<div class="container">
+  {% if "account" in request.path %}
+  <a href="{{url_for('users.account')}}" class="btn btn-dark"> < Go back to your profile </a>
+  {% else %}
+  <a href="{{url_for('users.sample_data')}}" class="btn btn-dark"> < Go back to the dataset presentation </a>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+
+  {{ inject | safe }}
+  <br>
+</div>
+
+
+{% endblock content %}

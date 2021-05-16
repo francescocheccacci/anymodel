@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>How it works</h1>
+  <br>
+
+      <p>
+        Register, upload your data and start modeling!
+      </p>
+      <div class="btn btn-dark">
+        <a href="{{url_for('users.register')}}" style='color:white'>Register</a>
+      </div>
+      <br>
+      <br>
+      <p>
+        You do not have any data? Use the sample dataset we have provided for practice.
+      </p>
+      <div class="btn btn-dark">
+        <a href="{{url_for('users.sample_data')}}" style='color:white'>Look at our sample dataset</a>
+      </div>
+
+</div>
+
+{% endblock %}

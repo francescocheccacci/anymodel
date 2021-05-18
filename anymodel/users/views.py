@@ -178,9 +178,9 @@ def user_posts(username):
 
 def get_filepath():
     if "account" in request.path:
-        filepath = os.path.join(current_app.root_path, 'static\pdatasets', current_user.dataset_name)
+        filepath = os.path.join(current_app.root_path, 'static','pdatasets', current_user.dataset_name)
     else:
-        filepath = os.path.join(current_app.root_path, 'static\pdatasets', "sample_dataset.csv")
+        filepath = os.path.join(current_app.root_path, 'static','pdatasets', "sample_dataset.csv")
     return filepath
 
 def get_inject():

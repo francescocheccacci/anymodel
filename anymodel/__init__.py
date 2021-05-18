@@ -18,7 +18,7 @@ app = Flask(__name__)
 # when you deploy this to a real website.
 # export SECRET_KEY=mysecret
 # set SECRET_KEY=mysecret
-app.config['SECRET_KEY'] = 'mysecret'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 #################################
 ### DATABASE SETUPS ############
@@ -57,11 +57,17 @@ mail_settings = {
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
     "MAIL_USERNAME": "anymodel.noreply@gmail.com",
-    "MAIL_PASSWORD": "@3tHj<1Aeb)E2v.J"
+    "MAIL_PASSWORD": os.getenv('MAIL_PASSWORD')
 }
 
 app.config.update(mail_settings)
 mail = Mail(app)
+
+###########################
+#### SIZE LIMIT #######
+#########################
+
+app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
 
 ###########################
 #### BLUEPRINT CONFIGS #######

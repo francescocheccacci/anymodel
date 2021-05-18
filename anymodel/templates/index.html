@@ -12,14 +12,35 @@
     </div>
   </div>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{ url_for('static', filename=  'boats.png') }}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Check out our sample dataset</h5>
-      <p class="card-text">Practice with a sample dataset provided by us!</p>
-      <a href="{{url_for('users.sample_data')}}" class="btn btn-dark">Start modeling!</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ url_for('static', filename=  'boats.png') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">View the sample dataset</h5>
+            <p class="card-text">Practice with the provided sample dataset. </p>
+            <a href="{{url_for('users.sample_data')}}" class="btn btn-dark">Start modeling!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{ url_for('static', filename=  'github-social.png') }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Collaborate with me on Github.</h5>
+            <p class="card-text">Help me improve AnyModel on Github.</p>
+            <a href="https://github.com/francescocheccacci/anymodel" class="btn btn-dark">See Github repo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+
+      </div>
     </div>
   </div>
+
+
   <br>
   <br>
   <br>

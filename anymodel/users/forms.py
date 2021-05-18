@@ -68,14 +68,6 @@ class UpdateUserPictureForm(FlaskForm):
     picture = FileField('Update Profile Picture', validators=[DataRequired(),FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Update')
 
-def FileSizeLimit(max_size_in_mb):
-    max_bytes = max_size_in_mb*1024*1024
-    def file_length_check(form, field):
-        if len(field.data.read()) > max_bytes:
-            raise ValidationError(f"File size must be less than {max_size_in_mb}MB")
-
-    return file_length_check
-
 class UpdateUserDatasetForm(FlaskForm):
-    dataset = FileField('Update Dataset (csv)', validators=[DataRequired(), FileSizeLimit(max_size_in_mb=5), FileAllowed(['csv'])], _prefix='asdsa')
+    dataset = FileField('Update Dataset (csv)', validators=[DataRequired(), FileAllowed(['csv'])], _prefix='asdsa')
     submit = SubmitField('Update')

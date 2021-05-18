@@ -1,0 +1,5 @@
+__pycache__/
+anymodel/data.sqlite
+anymodel/users/__pycache__/
+anymodel/static/profile_pics/
+anymodel/static/pdatasets/

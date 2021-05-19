@@ -15,7 +15,7 @@
 git clone https://github.com/francescocheccacci/anymodel.git
 ```
 
-1. Install packages:
+2. Install packages:
 ```bash
 pip install -r requirements.txt
 ```

@@ -8,3 +8,7 @@ anymodel/static/profile_pics/*
 !anymodel/static/profile_pics/default_profile.png
 anymodel/static/pdatasets/*
 !anymodel/static/pdatasets/sample_dataset.csv
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> a5dc9e6e0382154e88be817b93dc91c9d42be7a8

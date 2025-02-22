@@ -67,7 +67,7 @@ mail = Mail(app)
 #### SIZE LIMIT #######
 #########################
 
-app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024
 
 ###########################
 #### BLUEPRINT CONFIGS #######
